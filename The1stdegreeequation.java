@@ -12,7 +12,14 @@ public class The1stdegreeequation
 		quo = - num2/num1;
 		if(num1 == 0)
 		{
-			JOptionPane.showMessageDialog(null, "No solution!");
+			if(num2 != 0)
+			{
+				JOptionPane.showMessageDialog(null, "No solution!");
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(null, "Infinite solution!");
+			}
 		}
 		else
 			JOptionPane.showMessageDialog(null, "The solution of the equation " + strNum1 +"x + " + strNum2 + " = 0 is : " + quo,"Calculate Result", JOptionPane.INFORMATION_MESSAGE);
