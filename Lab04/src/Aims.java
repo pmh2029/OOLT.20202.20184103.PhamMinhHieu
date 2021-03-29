@@ -1,9 +1,12 @@
-
+import java.util.*;
 public class Aims {
 
 	public static void main(String[] args) 
     {
+		int count = 0;
+		Scanner sc = new Scanner(System.in);
 		Order anOrder = new Order();
+		DigitalVideoDisc unknown = new DigitalVideoDisc();
 		DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King");
 		dvd1.setCategory("Animation");
 		dvd1.setCost(19.95f);
@@ -24,10 +27,24 @@ public class Aims {
 		dvd3.setDirector("John Musker");
 		dvd3.setLength(90);
 		anOrder.addDigitalVideoDisc(dvd3);
+		DigitalVideoDisc[] all = {dvd1, dvd2, dvd3};
 		
 		System.out.println("Total cost is: " + anOrder.totalCost());
-		anOrder.removeDigitalVideoDisc(dvd3);
+		//anOrder.removeDigitalVideoDisc(dvd3);
 		System.out.println("Total cost is: " + anOrder.totalCost());
+		System.out.print("Type the word you want to search: ");
+        String input = sc.nextLine();
+        
+        System.out.println("Search result: ");
+        for(DigitalVideoDisc dc: all) {
+            if (unknown.search(input, dc)) {                
+                System.out.println("DVD info: " + dc.getTitle() + " - " + dc.getCategory() + " - " + dc.getDirector()+ " - " + dc.getLength() + " - " + dc.getCost());
+                count++;
+            }    
+        }
+        if (count == 0) {
+            System.out.println("Does not exist!");
+        }
 		
 		DigitalVideoDisc dvdList[] = new DigitalVideoDisc[3];
 		dvdList[0] = dvd1;
