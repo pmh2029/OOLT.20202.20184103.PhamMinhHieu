@@ -114,7 +114,7 @@ public class MyDate {
 		return year;
 	}
 	public boolean setYear(int year) {
-		if(year >  1989 && year <= 2021) {
+		if(year >  1989) {
 			this.year = year;
 			return true;
 		}
@@ -130,7 +130,6 @@ public class MyDate {
 		this.year = date.getYear();
 	}
 	public MyDate(int day, int month, int year) {
-		super();
 		this.day = day;
 		this.month = month;
 		this.year = year;
@@ -182,7 +181,9 @@ public class MyDate {
 	public void print(MyDate date) {
 		System.out.println(date.getDay() + "/" + date.getMonth()+ "/" + date.getYear());
 	}
-
+	public void printf(MyDate date) {
+		System.out.print(date.getDay() + "/" + date.getMonth()+ "/" + date.getYear());
+	}
 	public void accept() {
 		Scanner input = new Scanner(System.in);
 		System.out.println("Enter a date (Eg: February 18 2019): ");

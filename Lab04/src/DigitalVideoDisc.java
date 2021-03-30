@@ -1,9 +1,4 @@
 import java.lang.*;
-import java.lang.module.FindException;
-
-import org.graalvm.compiler.code.DisassemblerProvider;
-
-import jdk.internal.net.http.common.FlowTube.TubePublisher;
 
 public class DigitalVideoDisc {
 	private String title;
@@ -105,24 +100,5 @@ public class DigitalVideoDisc {
 		this.length = length;
 		this.cost = cost;
 		this.dateOrdered = dateOrdered;
-	}
-	public boolean search(String input, DigitalVideoDisc disc)
-	{	 
-		String[] str = input.split("\\s");
-		int count = 0;
-		for(String check: str)
-		{
-			if(disc.getTitle().contains(check))
-			{
-				count++;
-			}
-			length++;
-		}
-		if(count == str.length)
-		{	
-			return true;
-		}
-		else	
-			return false;
 	}
 }
